@@ -3,7 +3,7 @@
 
 html {
   /* Inter font family by default. */
-  font-family: Inter;
+  font-family: Inter, Helvetica, sans-serif;
   font-style: normal;
   color: #404245;
 }

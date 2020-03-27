@@ -1,0 +1,130 @@
+/* imports Inter font family. */
+@import url('https://rsms.me/inter/inter.css');
+
+html {
+  /* Inter font family by default. */
+  font-family: Inter;
+  font-style: normal;
+  color: #404245;
+}
+
+.monospace {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+h1.title {
+  margin: 0;
+  font-weight: 800;
+  font-size: 60px;
+  line-height: 46px;
+  padding-top: 101px;
+  padding-left: 110px;
+}
+
+section {
+  padding: 110px 110px;
+}
+
+section.announcement {
+  background: #FAFAFA;
+}
+
+section.statement p {
+  font-weight: 600;
+  font-size: 32px;
+  letter-spacing: -0.2px;
+  line-height: 36px;
+}
+
+section.announcement div.header {
+  display: flex;
+  align-items: center;
+}
+
+section.announcement div.header {
+  font-size: 13px;
+  font-weight: 500px;
+}
+
+section.announcement div.header p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+section.announcement div.header p.badge {
+  padding: 4px 12px;
+  border-radius: 10px;
+  color: #FFFFFF;
+  background: #EA386E;
+}
+
+section.announcement div.header p.date {
+  color: #8E949E;
+  margin-left: 25px;
+}
+
+section.announcement div.title {
+  margin: 42px 0px;
+  font-size: 24px;
+}
+
+section.announcement div.contents {
+  font-family: IBM Plex Mono;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+}
+
+section.announcement div.footer {
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  margin-top: 42px;
+}
+
+section.announcement div.footer p {
+  margin: 0px;
+}
+
+section.contents {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  letter-spacing: -0.2px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+section.footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+section.footer div.left {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+section.footer div.left a {
+  display: block;
+  font-weight: bold;
+  text-decoration: none;
+  color: #404245;
+  margin-right: 40px;
+}
+
+section.footer div.left a:last-child {
+  margin-right: 0px;
+}
+
+section.footer div.right p.version {
+  font-family: IBM Plex Mono;
+  font-style: normal;
+  font-size: 13px;
+  font-weight: 500;
+  color: #8E949E;
+  margin: 0px;
+}

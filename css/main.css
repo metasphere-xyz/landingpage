@@ -12,6 +12,27 @@ html {
   font-family: 'IBM Plex Mono', monospace;
 }
 
+a, a:active {
+  color: #404245;
+  text-decoration: none;
+}
+
+.container a:hover {
+  border-bottom: 2px solid #404245;
+}
+
+#link-to-top:hover {
+  text-decoration: none;
+}
+
+#link-to-top::before {
+  content: '⇧  ';
+}
+
+#link-to-top:hover::before {
+  content: '⬆  ';
+}
+
 h1.title {
   margin: 0;
   font-weight: 800;
@@ -139,13 +160,4 @@ section.footer div.right p.version {
 
 .warning {
   font-family: 'emoji';
-}
-
-a, a:active {
-  color: #404245;
-  text-decoration: none;
-}
-
-a:hover {
-  border-bottom: 2px solid #404245;
 }

@@ -26,11 +26,11 @@ a, a:active {
 }
 
 #link-to-top::before {
-  content: '⇧  ';
+  content: '\21E7  ';
 }
 
 #link-to-top:hover::before {
-  content: '⬆  ';
+  content: '\2B06  ';
 }
 
 h1.title {

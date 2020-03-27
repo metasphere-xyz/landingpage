@@ -26,7 +26,7 @@ section {
 }
 
 section div.container {
-  max-width: 980px;
+  max-width: 960px;
 }
 
 section.announcement {
@@ -78,6 +78,7 @@ section.announcement div.contents {
   font-weight: normal;
   font-size: 18px;
   letter-spacing: -0.01em;
+  line-height: 30px;
 }
 
 section.announcement div.footer {
@@ -89,12 +90,14 @@ section.announcement div.footer {
 
 section.announcement div.footer p {
   margin: 0px;
+  line-height: 30px;
 }
 
 section.contents {
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
+  line-height: 32px;
   letter-spacing: -0.2px;
   padding-top: 0px;
   padding-bottom: 0px;
@@ -132,4 +135,17 @@ section.footer div.right p.version {
   font-weight: 500;
   color: #8E949E;
   margin: 0px;
+}
+
+.warning {
+  font-family: 'emoji';
+}
+
+a, a:active {
+  color: #404245;
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom: 2px solid #404245;
 }

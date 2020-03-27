@@ -12,12 +12,12 @@ html {
   font-family: 'IBM Plex Mono', monospace;
 }
 
-a, a:active {
+.outside-link {
   color: #404245;
   text-decoration: none;
 }
 
-.container a:hover {
+.outside-link:hover {
   border-bottom: 2px solid #404245;
 }
 
@@ -26,11 +26,11 @@ a, a:active {
 }
 
 #link-to-top::before {
-  content: '\21E7  ';
+  content: '⇧  ';
 }
 
 #link-to-top:hover::before {
-  content: '\2B06  ';
+  content: '⬆  ';
 }
 
 h1.title {

@@ -20,4 +20,4 @@ To build a script for the landingpage, please take the following steps,
     npm run build
     ```
 
-3. You will find a script `main.js` in a `dist` directory.
+3. You will find a script `research-explorer.js` in a `js` directory.

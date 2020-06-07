@@ -19,17 +19,17 @@
         </p>
       </div>
       <div
-        id="navigation-menu-container"
-        class="navigation-menu-container"
+        id="section-navigator"
+        class="section-navigator"
+        :class="navigatorClass()"
       >
         <!--
           Behavior of navigation-menu is controlled by
           a Vue mixin `section-navigator-mixin`.
         -->
         <div
-          id="section-navigator"
           class="navigation-menu"
-          :class="menuClass()"
+          @click="hideMenu()"
         >
           <a
             class="navigation-menu-item"
@@ -161,8 +161,10 @@
     </div>
     <!-- for tests only -->
     <style>
-    .navigation-menu-container {
+    .section-navigator {
       position: relative;
+      /* TODO: how do you handle an oversized element? */
+      overflow-x: hidden;
     }
     .navigation-menu {
       position: absolute;
@@ -172,12 +174,20 @@
       transition-property: top, width;
       transition-duration: 0.2s;
     }
-    .navigation-menu.is-hidden:not(:hover) {
-      width: 0;
-    }
-    .navigation-menu.is-fixed {
+    .is-folded .navigation-menu {
       position: fixed;
+      width: 0;
       top: 1em;
+    }
+    .is-folded .navigation-menu:hover {
+      /*
+       * it is annoying to see overlapping sections,
+       * after jumping via the navigation menu.
+       */
+      transition: none;
+    }
+    .is-folded.is-slid-in .navigation-menu {
+      width: 15em;
     }
 
     .navigation-menu-item {
@@ -199,13 +209,14 @@
     }
 
     .navigation-contents {
-      /* this padding-top is reserved for the navigation menu. */
+      /* padding-top is reserved for the navigation menu. */
       padding-top: 12em;
       margin-left: 110px;
-      transition: 1.0s;
+      width: calc(100% - 110px);
+      transition: margin-left 0.2s;
     }
-    .navigation-contents.is-shifted {
-      margin-left: calc(110px + 15em);
+    .is-slid-in .navigation-contents {
+      margin-left: calc(110px + 15.5em);
     }
     </style>
     <!-- adds behavior -->

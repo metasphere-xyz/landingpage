@@ -3,15 +3,39 @@ import debounce from 'lodash.debounce'
 /**
  * Vue mixin of a section navigator.
  *
+ * #### Dynamic styling
+ *
+ * The following functions implement dynamic styling of the section navigator.
+ *
+ * The `navigatorClass` method returns a combination of the following CSS
+ * classes,
+ * - `is-folded`: if the navigation menu is folded.
+ * - `is-slid-in`: if the navigation menu is folded but temporarily visible
+ *   because a pointer is on it.
+ *
+ * The `menuItemClass(sectionId)` method returns the following CSS class,
+ * - `is-active`: if the current section is the section identified by
+ *   `sectionId`.
+ *
  * @namespace SectionNavigatorMixin
  *
  * @memberof module:landingpage/components
+ *
+ * @vue-prop {String} [menu-class-name="navigation-menu"]
+ *
+ *   Class name assigned to an element that works as a navigation menu.
+ *   If there are multiple elements that have this class, only the first one
+ *   is used.
  */
 export const SectionNavigatorMixin = {
   props: {
+    menuClassName: {
+      type: String,
+      default: 'navigation-menu'
+    },
     sectionCaptureMargin: {
       type: Number,
-      default: 20
+      default: 30
     }
   },
   data: {
@@ -26,6 +50,17 @@ export const SectionNavigatorMixin = {
     }
   },
   computed: {
+    menuElement () {
+      const elements = this.$el.getElementsByClassName(this.menuClassName)
+      if (elements.length > 0) {
+        if (elements.length > 1) {
+          console.warn(`only one navigation menu is supported. but ${elements.length} elements match`)
+        }
+        return elements[0]
+      } else {
+        return null
+      }
+    },
     firstSectionId () {
       return (this.sectionIds.length > 0) ? this.sectionIds[0] : undefined
     },
@@ -64,16 +99,16 @@ export const SectionNavigatorMixin = {
     if (process.env.NODE_ENV !== 'production') {
       console.log('mounted', this.sectionIds)
     }
-    // activates the first section
+    // activates the first section.
     // how do you justify this?
     // - if the other section of the page is shown,
     //   it is handled by a `scroll` event later.
     this.firstSectionState.isActive = true
     // monitors pointer events on the container
-    this.$el.addEventListener('pointerover', event => {
+    this.menuElement.addEventListener('pointerover', event => {
       this.onPointerover(event)
     })
-    this.$el.addEventListener('pointerout', event => {
+    this.menuElement.addEventListener('pointerout', event => {
       this.onPointerout(event)
     })
     // monitors scroll
@@ -85,14 +120,15 @@ export const SectionNavigatorMixin = {
     section (sectionId) {
       return document.getElementById(sectionId)
     },
-    menuClass () {
+    navigatorClass () {
       return {
-        'is-hidden': this.isFolded && !this.isVisible,
-        'is-fixed': this.isFolded
+        'is-folded': this.isFolded,
+        'is-slid-in': this.isFolded && this.isVisible
       }
     },
     // this function automatically collects link elements
     // that need dynamic state management.
+    // supposes that it is called in the order of sections.
     menuItemClass (sectionId) {
       if (process.env.NODE_ENV !== 'production') {
         console.log('menuItemClass', sectionId, this.sectionStates[sectionId])

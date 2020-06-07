@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>metasphere research explorer</title>
+    <!-- imports IBM Plex Mono via Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <!-- CSS of this project -->
+    <link href="css/main.css" rel="stylesheet">
+  </head>
+  <body>
+    <div>
+      <h1>
+        metasphere research explorer
+      </h1>
+      <div id="introduction">
+        <p>
+          With the aim of making existing and future research and insights on the novel corona virus more accessible, metasphere is working on tools to help researchers navigate and make better sense of the growing corpus of scientific literature.
+        </p>
+      </div>
+      <div
+        id="section-navigator"
+        class="section-navigator"
+        :class="navigatorClass()"
+      >
+        <!--
+          Behavior of navigation-menu is controlled by
+          a Vue mixin `section-navigator-mixin`.
+        -->
+        <div
+          class="navigation-menu"
+          @click="hideMenu()"
+        >
+          <a
+            class="navigation-menu-item"
+            :class="menuItemClass('introduction')"
+            href="#introduction"
+          >
+            Introduction
+          </a>
+          <a
+            class="navigation-menu-item"
+            :class="menuItemClass('mapping-the-information-space')"
+            href="#mapping-the-information-space"
+          >
+            Mapping the information space
+          </a>
+          <a
+            class="navigation-menu-item"
+            :class="menuItemClass('help-us-shape-our-tools')"
+            href="#help-us-shape-our-tools"
+          >
+            Help us shape our tools
+          </a>
+          <a
+            class="navigation-menu-item"
+            :class="menuItemClass('roadmap-and-outlook')"
+            href="#roadmap-and-outlook"
+          >
+            Roadmap and outlook
+          </a>
+          <a
+            class="navigation-menu-item"
+            :class="menuItemClass('participate')"
+            href="#participate"
+          >
+            Participate
+          </a>
+          <a
+            class="navigation-menu-item"
+            :class="menuItemClass('the-team')"
+            href="#the-team"
+          >
+            The team
+          </a>
+        </div>
+        <div class="navigation-contents">
+          <div>
+            <p>
+              As research into COVID-19 is surging and a multitude of routes are being explored, the volume of produced papers makes maintaining oversight over the current state of research challenging. With the aim of getting new research teams working on COVID-19 related topics up to speed faster, an international group of volunteers is building a visual experience to provide a landscape of the current research as well as tools to enable researchers to collectively work through the amount of information being produced at faster rates and more effectively.
+            </p>
+          </div>
+          <div>
+            <h2 id="mapping-the-information-space">
+              Mapping the information space
+            </h2>
+            <p>
+              To make the complex corpus of research papers on COVID-19 more accessible, our approach is to cluster papers according to their semantic similarity and plot them on a map, thereby making the research landscape explorable as a whole.
+            </p>
+            <p>
+              We are currently working with the CORD-19 dataset which consists of roughly 30,000 articles. When trying to make such a large corpus of documents visually navigable in its entirity while accounting for a large number of interrelations between the papers, the complexity makes it hard to make sense of most visualizations.  Our approach is to visualize clustered objects, forming interconnected networks, in a way that makes exploration more effortless – by utilizing the design of geospatial maps. 
+            </p>
+            <p>
+              Visualizing the research landscape on a topographic map gives the benefits of building on well-learned navigational patterns in order to make the corpus navigable in the literal sense. Researchers can pan around to explore the landscape, zooming in and out to explore topical clusters. Additionally this form of visualization gives us an ability to encode structural attributes of the corpus (i.e. relevance of authors/papers, citation structure of connected papers, etc) in spatial features (i.e. size, elevation or proximity).
+            </p>
+            <p>
+              Moreover, adding heterogenous visual clues by placing the content on landforms, let’s us address the problem of uniformity in complex network visualizations. Common representations of clusters using uniform visual indicators such as colored dots tend to overwhelm the reader because they are not able to tell those indicators apart. This makes what appears to be “simple” network visualizations hardly comprehensible when visualizing a large number of interrelations. With humans being good at picking out patterns in seemingly random noise, we give the reader forms to visually latch on to, thereby making it easier to distinguish on what topical “continent” a certain piece of information “lives”.
+            </p>
+          </div>
+          <div>
+            <h2 id="help-us-shape-our-tools">
+              Help us shape our tools
+            </h2>
+            <p>
+              In order to build a better understanding of the utility of possible features for our tools, we are currently conducting a survey with the aim of learning how researchers engage in their scholarship efforts. We hope to gather insights on how research papers are being read by different kinds of researchers, how they are using software for assisting their insight generation and what aspects are missing in such software.
+            </p>
+            <p>
+              Your participation in our short survey (completion should take only around 5–10 minutes) will greatly help us in making our tools as relevant as possible. So if you are a researcher – no matter from what field – please consider helping our efforts by filling out the survey below:
+            </p>
+          </div>
+          <div>
+            <h2 id="roadmap-and-outlook">
+              Roadmap and outlook
+            </h2>
+            <div>
+              <h3>
+                Achievements
+              </h3>
+              <p>
+                In the last month, we focused our efforts on two aspects: the clustering of research papers into topics and the visualization of those topics on the topographic knowledge map. The first aspect is laid out by our data scientists who explore different machine learning models to effectively cluster the research and extract keywords from it. The latter aspect is shaped by our designers and developers hand-in-hand with the data scientists overseeing the language processing. We have achieved workable results in both categories.
+              </p>
+            </div>
+            <div>
+              <h3>
+                Current goal
+              </h3>
+              <p>
+                While working on the data processing and visualization, we have started gathering ⟶  input from the research community on desirable features for the tools. This ongoing dialogue with  researchers allows us to define crucial features for the interface of the research explorer. Our current focus lies on combining the semantic mapping with the reading experience into one coherent interface which will be released as a first public version. 
+              </p>
+            </div>
+            <div>
+              <h3>
+                Roadmap
+              </h3>
+            </div>
+          </div>
+          <div>
+            <h2 id="participate">
+              Participate
+            </h2>
+            <p>
+              This project is driven by volunteers, investing their expertise to develop tools that make a useful contribution to solving some of the current problems we are facing in the information sphere. We share interests in scientific research, data visualization and cartography, natural language processing and machine learning. We are open to expanding our team with anyone sharing these interests. If you want to contribute or share insights into the topics we are focusing on, we be very happy if you would contact us through the form below:
+            </p>
+          </div>
+          <div>
+            <h2 id="the-team">
+              The team
+            </h2>
+            <p>
+              We are an international group of collaborators from diverse backgrounds. What brought us together is our passion for creating technical tools with a human perspective and the goal of enabling people to make more sense of an increasingly complex world.
+            </p>
+            <p>
+              In addition to the core team, contributions to this project have been made by  Donatus Herre, Agnes Ferenczi, Celine Kuttler, Anja Krivograd, and Andrea Giacobino. 
+            </p>
+            <p>
+              Thank you all a lot ♥
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- for tests only -->
+    <style>
+    .section-navigator {
+      position: relative;
+      /* TODO: how do you handle an oversized element? */
+      overflow-x: hidden;
+    }
+    .navigation-menu {
+      position: absolute;
+      display: inline-block;
+      margin-left: 110px;
+      width: 15em;
+      transition-property: top, width;
+      transition-duration: 0.2s;
+    }
+    .is-folded .navigation-menu {
+      position: fixed;
+      width: 0;
+      top: 1em;
+    }
+    .is-folded .navigation-menu:hover {
+      /*
+       * it is annoying to see overlapping sections,
+       * after jumping via the navigation menu.
+       */
+      transition: none;
+    }
+    .is-folded.is-slid-in .navigation-menu {
+      width: 15em;
+    }
+
+    .navigation-menu-item {
+      display: block;
+      line-height: 30px;
+      color: #404245;
+      text-decoration: none;
+      overflow: hidden;
+      text-overflow: none;
+      white-space: nowrap;
+    }
+    .navigation-menu-item:hover {
+      text-decoration: underline;
+    }
+    .navigation-menu-item::before {
+      position: absolute;
+      content: "○";
+      left: -2em;
+      /* fills the gap between a bullet and item body to capture a pointer. */
+      padding-right: 2em;
+    }
+    .navigation-menu-item.is-active::before {
+      content: "●";
+    }
+
+    .navigation-contents {
+      /* padding-top is reserved for the navigation menu. */
+      padding-top: 12em;
+      margin-left: 110px;
+      width: calc(100% - 110px);
+      transition: margin-left 0.2s;
+    }
+    .is-slid-in .navigation-contents {
+      margin-left: calc(110px + 15.5em);
+    }
+    </style>
+    <!-- adds behavior -->
+    <script src="js/research-explorer.js"></script>
+  </body>
+</html>

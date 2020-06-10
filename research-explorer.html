@@ -458,6 +458,13 @@
       font-size: 13px;
       line-height: 20px;
       letter-spacing: -0.2px;
+      /*
+       * Suppresses automatic size adjustment on Safari on iOS.
+       * https://stackoverflow.com/questions/3226001/some-font-sizes-rendered-larger-on-safari-iphone
+       *
+       * TODO: do I have to consider about the screen size?
+       */
+      -webkit-font-size-adjust: 100%;
     }
 
     .roadmap-milestone {

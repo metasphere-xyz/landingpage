@@ -7,7 +7,6 @@
   position: absolute;
   display: inline-block;
   margin-left: 110px;
-  width: 15em;
   transition-property: top, width;
   transition-duration: 0.2s;
 }
@@ -29,9 +28,23 @@
 
 .navigation-menu-item {
   display: block;
-  line-height: 2em;
+  padding-bottom: 0.8em;
+  line-height: normal;
   color: #404245;
   text-decoration: none;
+}
+.section-navigator:not(.is-folded) .navigation-menu-item:last-of-type {
+  /*
+   * .section-navigator:not(is-folded) makes the menu sensitive
+   * when it is folded.
+   */
+  padding-bottom: 0;
+}
+.is-folded .navigation-menu-item {
+  /*
+   * menu item is clipped by the menu width without being wrapped.
+   * TODO: should a long menu item be represented in multiple lines?
+   */
   overflow: hidden;
   text-overflow: none;
   white-space: nowrap;
@@ -45,6 +58,15 @@
   left: -2em;
   /* fills the gap between a bullet and item body to capture a pointer. */
   padding-right: 2em;
+  /* fills the gap between menu items. */
+  padding-bottom: 0.8em;
+}
+.section-navigator:not(.is-folded) .navigation-menu-item:last-of-type::before {
+  /*
+   * .section-navigator:not(is-folded) makes the menu sensitive
+   * when it is folded.
+   */
+  padding-bottom: 0;
 }
 .navigation-menu-item.is-active::before {
   content: "●";

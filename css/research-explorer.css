@@ -1,0 +1,238 @@
+.section-navigator {
+  position: relative;
+  /* TODO: how do you handle an oversized element? */
+  overflow-x: hidden;
+}
+.navigation-menu {
+  position: absolute;
+  display: inline-block;
+  margin-left: 110px;
+  transition-property: top, width;
+  transition-duration: 0.2s;
+}
+.is-folded .navigation-menu {
+  position: fixed;
+  width: 0;
+  top: 1em;
+}
+.is-folded .navigation-menu:hover {
+  /*
+   * it is annoying to see overlapping sections,
+   * after jumping via the navigation menu.
+   */
+  transition: none;
+}
+.is-folded.is-slid-in .navigation-menu {
+  width: 15em;
+}
+
+.navigation-menu-item {
+  display: block;
+  padding-bottom: 0.8em;
+  line-height: normal;
+  color: #404245;
+  text-decoration: none;
+}
+.section-navigator:not(.is-folded) .navigation-menu-item:last-of-type {
+  /*
+   * .section-navigator:not(is-folded) makes the menu sensitive
+   * when it is folded.
+   */
+  padding-bottom: 0;
+}
+.is-folded .navigation-menu-item {
+  /*
+   * menu item is clipped by the menu width without being wrapped.
+   * TODO: should a long menu item be represented in multiple lines?
+   */
+  overflow: hidden;
+  text-overflow: none;
+  white-space: nowrap;
+}
+.navigation-menu-item:hover {
+  text-decoration: underline;
+}
+.navigation-menu-item::before {
+  position: absolute;
+  content: "○";
+  left: -2em;
+  /* fills the gap between a bullet and item body to capture a pointer. */
+  padding-right: 2em;
+  /* fills the gap between menu items. */
+  padding-bottom: 0.8em;
+}
+.section-navigator:not(.is-folded) .navigation-menu-item:last-of-type::before {
+  /*
+   * .section-navigator:not(is-folded) makes the menu sensitive
+   * when it is folded.
+   */
+  padding-bottom: 0;
+}
+.navigation-menu-item.is-active::before {
+  content: "●";
+}
+
+.navigation-contents {
+  /* padding-top is reserved for the navigation menu. */
+  padding-top: 12em;
+  margin-left: 110px;
+  width: calc(100% - 110px);
+  transition: margin-left 0.2s;
+}
+.is-slid-in .navigation-contents {
+  margin-left: calc(110px + 15.5em);
+}
+
+.roadmap {
+  font-size: 0.8rem;
+  line-height: 1.5em;
+  /* uncomment if letter-spacing matters. */
+  /* letter-spacing: -0.02px; */
+  /* letter-spacing: -0.005em; */
+  /*
+   * Suppresses automatic size adjustment on Safari on iOS.
+   * https://stackoverflow.com/questions/3226001/some-font-sizes-rendered-larger-on-safari-iphone
+   *
+   * TODO: do I have to consider about the screen size?
+   */
+  -webkit-text-size-adjust: 100%;
+}
+
+.roadmap-milestone {
+  display: flex;
+  align-items: center;
+  margin: 0 0;
+}
+
+.roadmap-milestone-name {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  margin-right: 1.5em;
+  font-weight: bold;
+}
+.roadmap-milestone-name::before {
+  content: "";
+  display: inline-block;
+  flex-shrink: 0;
+  width: 1.25em;
+  height: 1.25em;
+  margin-right: 1.5em;
+  border: 1px solid #404245;
+  border-radius: 50%;
+}
+
+.roadmap-level-2 {
+  margin-left: calc(0.5 * 1.25em);
+  padding: 0 0;
+  border-left: 1px dashed #C6CAD0;
+}
+.roadmap-level-2:first-of-type {
+  padding-top: 1.2em;
+}
+.roadmap-level-2:last-of-type {
+  padding-bottom: 1.2em;
+}
+.roadmap-level-1:last-of-type .roadmap-level-2 {
+  border-left: none;
+}
+
+.roadmap-module {
+  display: flex;
+  margin-left: calc((0.5 * 1.25em) + 1.5em);
+  padding: 1.2em 0;
+  border-top: 1px solid #E5E5E5;
+}
+.roadmap-level-2:last-of-type .roadmap-module {
+  border-bottom: 1px solid #E5E5E5;
+}
+.roadmap-level-1:last-of-type .roadmap-level-2:last-of-type .roadmap-module {
+  border-bottom: none;
+}
+
+.roadmap-module-name {
+  width: 4.5rem;
+  flex-shrink: 0;
+  font-size: 0.8em;
+  line-height: normal;
+  font-weight: bold;
+  color: #8E949E;
+}
+
+.roadmap-task-list {
+  width: calc(100% - 4.5rem);
+}
+
+.roadmap-task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0;
+}
+
+.roadmap-task-description {
+  display: flex;
+  align-items: center;
+  margin: 0 0;
+}
+.roadmap-task-description::before {
+  content: "";
+  display: inline-block;
+  flex-shrink: 0;
+  width: 1.25em;
+  height: 1.25em;
+  margin-right: 1.5em;
+  text-align: center;
+  line-height: normal;
+  border: 1px solid #404245;
+  border-radius: 50%;
+}
+.is-done .roadmap-task-description::before {
+  content: "✓";
+}
+.is-feature-request .roadmap-task-description::before {
+  border-color: #C6CAD0;
+}
+
+.roadmap-task-state {
+  display: inline-block;
+  flex-shrink: 0;
+  margin: 0 0;
+  padding: 0.4em 1.2em;
+  font-size: 0.8em;
+  line-height: normal;
+  letter-spacing: normal;
+  border: 1px solid;
+  border-radius: 1.0em;
+}
+.is-done .roadmap-task-state {
+  color: #CADA08;
+  border-color: #CADA08;
+}
+.is-in-progress .roadmap-task-state {
+  color: #8E949E;
+  border-color: #8E949E;
+}
+.is-pending .roadmap-task-state,
+.is-feature-request .roadmap-task-state {
+  color: #C6CAD0;
+  border-color: #C6CAD0;
+}
+
+.roadmap-task-link {
+  height: 1.25em;
+  margin-left: calc(0.5 * 1.25em);
+  padding-top: 1.25em;
+  border-left: 1px dashed #C6CAD0;
+}
+.roadmap-task-link.is-done {
+  border-left: 1px solid #404245;
+}
+
+.roadmap-task-delimiter {
+  padding: 0 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: calc((0.5 * 1.25em) + 1.5em);
+  border-top: 1px solid #E5E5E5;
+}

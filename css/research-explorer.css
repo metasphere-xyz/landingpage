@@ -236,3 +236,31 @@
   margin-left: calc((0.5 * 1.25em) + 1.5em);
   border-top: 1px solid #E5E5E5;
 }
+
+.introduction-cards {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+}
+
+.introduction-card {
+  display: block;
+  width: 17.5rem;
+  margin-right: 4.0rem;
+  margin-bottom: 6.0rem;
+}
+
+.introduction-name {
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  font-weight: bold;
+}
+
+.introduction-description {
+  margin: 0 0;
+}
+
+.introduction-link {
+  display: block;
+}

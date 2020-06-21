@@ -27,18 +27,28 @@
           <h2 class="chapter-title">
             Current projects and insights
           </h2>
-          <div class="project-list">
+          <div
+            id="project-list"
+            class="project-list"
+          >
             <div class="project">
-              <div class="project-heading">
+              <a
+                class="project-heading"
+                href="research-explorer.html"
+              >
                 <p class="project-tag">
                   <span class="project-tag-tool">tool</span>
                 </p>
                 <p class="project-title">
                   Overview: research explorer
                 </p>
-              </div>
+              </a>
             </div>
-            <div class="project">
+            <div
+              id="mapping-the-covid-19-information-space"
+              class="project"
+              :class="projectStateClass('mapping-the-covid-19-information-space')"
+            >
               <div class="project-heading">
                 <p class="project-tag">
                   <span class="project-tag-announcement">announcement</span>
@@ -187,5 +197,7 @@
         </a>
       </div>
     </div>
+    <!-- adds behavior -->
+    <script src="js/main.js"></script>
   </body>
 </html>

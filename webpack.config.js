@@ -7,6 +7,7 @@ module.exports = {
   mode: defaultMode,
   target: 'web',
   entry: {
+    'main': './src/js/main.js',
     'research-explorer': './src/js/research-explorer.js'
   },
   output: {

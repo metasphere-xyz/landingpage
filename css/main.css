@@ -164,6 +164,11 @@ section.footer div.right p.version {
 .project-heading {
   display: flex;
   padding: 0.8em 0;
+  cursor: pointer;
+}
+a.project-heading {
+  color: #404245;
+  text-decoration: none;
 }
 
 .project-heading .project-tag {
@@ -195,9 +200,18 @@ section.footer div.right p.version {
 .project-heading:hover .project-tag-announcement {
   background: #FF2E60;
 }
+.project-heading:hover .project-tag-article {
+  /* TBD */
+  background: #2E5AFF;
+}
 
 .project-details {
+  overflow-y: hidden;
   font-size: 1.1rem;
+  transition: height 0.2s;
+}
+.project.is-folded .project-details {
+  height: 0;
 }
 
 .project-details p {

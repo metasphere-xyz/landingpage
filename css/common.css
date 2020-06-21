@@ -1,0 +1,82 @@
+/* imports Inter font family. */
+@import url('https://rsms.me/inter/inter.css');
+
+html {
+  /* Inter font family by default. */
+  font-family: Inter, Helvetica, sans-serif;
+  font-style: normal;
+  color: #404245;
+}
+
+.container {
+  max-width: 800px;
+  /* TODO: mobile environment should need a smaller margin.  */
+  margin-left: 15rem;
+}
+
+.title {
+  margin: 8rem 0;
+  font-weight: 300;
+  font-size: 3.75rem;
+}
+
+.chapter-title {
+  margin: 4rem 0;
+  font-weight: 600;
+}
+
+.introduction {
+  margin: 10rem 0;
+  font-size: 2rem;
+}
+
+.chapter {
+  margin-top: 10rem;
+  font-size: 1.5rem;
+  line-height: 2.0rem;
+}
+.chapter p {
+  margin: 1.5em 0;
+}
+
+.emphasized {
+  font-weight: 600;
+}
+p.emphasized {
+  margin-top: 2.0em;
+  margin-bottom: 3.0em;
+}
+
+p.details {
+  font-size: 1.1rem;
+}
+
+.footer {
+  display: flex;
+  margin: 10rem 0;
+  font-size: 1.1rem;
+}
+
+.footer-link {
+  margin-right: 3rem;
+}
+.footer-link:last-of-type {
+  margin-right: 0;
+}
+
+.outside-link {
+  color: #8E949E;
+  text-decoration: none;
+}
+.outside-link:hover {
+  border-bottom: 2px solid #8E949E;
+}
+
+.outside-link.inline {
+  color: #404245;
+  text-decoration: underline;
+}
+.outside-link.inline:hover {
+  color: #767A7F;
+  border-bottom: none;
+}

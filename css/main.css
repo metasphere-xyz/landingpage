@@ -1,26 +1,8 @@
-/* imports Inter font family. */
-@import url('https://rsms.me/inter/inter.css');
-
-html {
-  /* Inter font family by default. */
-  font-family: Inter, Helvetica, sans-serif;
-  font-style: normal;
-  color: #404245;
-}
-
 .monospace {
   font-family: 'IBM Plex Mono', monospace;
 }
 
-.outside-link {
-  color: #404245;
-  text-decoration: none;
-}
-
-.outside-link:hover {
-  border-bottom: 2px solid #404245;
-}
-
+/*
 #link-to-top:hover {
   text-decoration: none;
 }
@@ -31,8 +13,9 @@ html {
 
 #link-to-top:hover::before {
   content: '\2B06  ';
-}
+} */
 
+/*
 h1.title {
   margin: 0;
   font-weight: 800;
@@ -40,16 +23,19 @@ h1.title {
   line-height: 46px;
   padding-top: 101px;
   padding-left: 110px;
-}
+} */
 
+/*
 section {
   padding: 110px 110px;
-}
+} */
 
+/*
 section div.container {
   max-width: 960px;
-}
+} */
 
+/*
 section.announcement {
   background: #FAFAFA;
 }
@@ -157,7 +143,16 @@ section.footer div.right p.version {
   color: #8E949E;
   margin: 0px;
 }
+*/
 
+/*
 .warning {
   font-family: 'emoji';
+} */
+
+.notice {
+  display: block;
+}
+.notice::before {
+  content: "⚠";
 }

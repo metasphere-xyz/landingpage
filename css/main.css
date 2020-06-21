@@ -150,6 +150,60 @@ section.footer div.right p.version {
   font-family: 'emoji';
 } */
 
+.project-list {
+  font-size: 2.0rem;
+}
+
+.project {
+  border-bottom: 1px solid #E5E5E5;
+}
+.project:last-of-type {
+  border-bottom: none;
+}
+
+.project-heading {
+  display: flex;
+  padding: 0.8em 0;
+}
+
+.project-heading .project-tag {
+  width: 12em;
+  flex-shrink: 0;
+  margin: 0 0;
+  font-size: 0.8rem;
+}
+
+.project-heading .project-title {
+  margin: 0 0;
+}
+
+.project-tag span {
+  display: inline-block;
+  margin: 0 0;
+  padding: 0.4em 1.2em;
+  line-height: normal;
+  font-family: 'IBM Plex Mono', monospace;
+  font-style: normal;
+  color: #FFFFFF;
+  background: #BDBDBD;
+  border-radius: 1.0em;
+}
+
+.project-heading:hover .project-tag-tool {
+  background: #CADA08;
+}
+.project-heading:hover .project-tag-announcement {
+  background: #FF2E60;
+}
+
+.project-details {
+  font-size: 1.1rem;
+}
+
+.project-details p {
+  margin: 4em 0;
+}
+
 .notice {
   display: block;
 }

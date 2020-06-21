@@ -72,10 +72,12 @@ p.details {
   border-bottom: 2px solid #8E949E;
 }
 
+.internal-link,
 .outside-link.inline {
   color: #404245;
   text-decoration: underline;
 }
+.internal-link:hover,
 .outside-link.inline:hover {
   color: #767A7F;
   border-bottom: none;

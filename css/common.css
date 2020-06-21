@@ -1,0 +1,164 @@
+/* imports Inter font family. */
+@import url('https://rsms.me/inter/inter.css');
+
+html {
+  /* Inter font family by default. */
+  font-family: Inter, Helvetica, sans-serif;
+  font-style: normal;
+  color: #404245;
+}
+
+.container {
+  max-width: 800px;
+  /* TODO: mobile environment should need a smaller margin.  */
+  margin-left: 15rem;
+}
+
+.title {
+  margin: 8rem 0;
+  font-weight: 300;
+  font-size: 3.75rem;
+}
+.title.with-subtitle {
+  margin-bottom: 0;
+}
+
+.subtitle {
+  margin-bottom: 3rem;
+  font-weight: 300;
+  font-size: 3.75rem;
+}
+
+.chapter-title {
+  margin: 4rem 0;
+  font-weight: 600;
+}
+
+.section-title {
+  margin: 2rem 0;
+  font-size: 1.1rem;
+  font-weight: normal;
+  color: #8E949E;
+}
+
+.introduction {
+  margin: 10rem 0;
+  font-size: 2rem;
+}
+
+.chapter {
+  margin-top: 10rem;
+  font-size: 1.5rem;
+}
+.chapter p {
+  margin: 1.5em 0;
+  line-height: 1.65em;
+}
+
+.emphasized {
+  font-weight: 600;
+}
+p.emphasized {
+  margin-top: 2.0em;
+  margin-bottom: 3.0em;
+}
+
+p.details {
+  font-size: 1.1rem;
+}
+
+.footer {
+  display: flex;
+  margin: 10rem 0;
+  font-size: 1.1rem;
+}
+
+.footer-link {
+  margin-right: 3rem;
+}
+.footer-link:last-of-type {
+  margin-right: 0;
+}
+
+.outside-link {
+  color: #8E949E;
+  text-decoration: none;
+}
+.outside-link:hover {
+  border-bottom: 2px solid #8E949E;
+}
+
+.outside-link.inline {
+  color: #404245;
+}
+
+.internal-link,
+.outside-link.underlined {
+  color: #404245;
+  text-decoration: underline;
+}
+.internal-link:hover,
+.outside-link.inline:hover,
+.outside-link.underlined:hover {
+  border-bottom: none;
+}
+
+.link-to-top {
+  color: #333333;
+  text-decoration: none;
+}
+.link-to-top:hover {
+}
+.link-to-top::before {
+  content: '\21E7';
+  padding-right: 0.5em;
+}
+.link-to-top:hover::before {
+  content: '\2B06';
+}
+
+.project-heading {
+  display: flex;
+  align-items: center;
+}
+a.project-heading {
+  color: #404245;
+  text-decoration: none;
+}
+
+.project-heading .project-tag {
+  width: 12em;
+  flex-shrink: 0;
+  margin: 0 0;
+  font-size: 0.8rem;
+}
+
+.project-heading .project-title {
+  margin: 0 0;
+}
+
+.project-tag span {
+  display: inline-block;
+  margin: 0 0;
+  padding: 0.4em 1.2em;
+  line-height: normal;
+  font-family: 'IBM Plex Mono', monospace;
+  font-style: normal;
+  color: #FFFFFF;
+  background: #BDBDBD;
+  border-radius: 1.0em;
+}
+
+.project-heading.is-active .project-tag-tool,
+.project-heading:hover .project-tag-tool {
+  background: #CADA08;
+}
+.project-heading.is-active .project-tag-announcement,
+.project-heading:hover .project-tag-announcement {
+  background: #FF2E60;
+}
+.project-heading.is-active .project-tag-article,
+.project-heading:hover .project-tag-article {
+  /* TBD */
+  background: #2E5AFF;
+}

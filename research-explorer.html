@@ -6,18 +6,36 @@
     <!-- imports IBM Plex Mono via Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
     <!-- CSS of this project -->
-    <link href="css/main.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
     <link href="css/research-explorer.css" rel="stylesheet">
   </head>
   <body>
     <div>
-      <h1>
-        metasphere research explorer
-      </h1>
-      <div id="introduction">
-        <p>
-          With the aim of making existing and future research and insights on the novel corona virus more accessible, metasphere is working on tools to help researchers navigate and make better sense of the growing corpus of scientific literature.
-        </p>
+      <div class="container">
+        <h1 class="title with-subtitle">
+          metasphere
+        </h1>
+        <div class="subtitle project-heading is-active">
+          <p class="project-tag">
+            <span class="project-tag-tool">tool</span>
+          </p>
+          <p class="project-title">
+            research explorer
+          </p>
+        </div>
+        <div class="version-code">
+          <p>
+            updated 03.06.2020
+          </p>
+        </div>
+        <section
+          id="introduction"
+          class="introduction"
+        >
+          <p>
+            With the aim of making existing and future research and insights on the novel corona virus more accessible, metasphere is working on tools to help researchers navigate and make better sense of the growing corpus of scientific literature.
+          </p>
+        </section>
       </div>
       <div
         id="section-navigator"
@@ -29,7 +47,7 @@
           a Vue mixin `section-navigator-mixin`.
         -->
         <div
-          class="navigation-menu"
+          class="navigation-menu container"
           @click="hideMenu()"
         >
           <a
@@ -75,62 +93,94 @@
             The team
           </a>
         </div>
-        <div class="navigation-contents">
-          <div>
-            <p>
+        <div class="navigation-contents container">
+          <section class="chapter">
+            <p class="details">
               As research into COVID-19 is surging and a multitude of routes are being explored, the volume of produced papers makes maintaining oversight over the current state of research challenging. With the aim of getting new research teams working on COVID-19 related topics up to speed faster, an international group of volunteers is building a visual experience to provide a landscape of the current research as well as tools to enable researchers to collectively work through the amount of information being produced at faster rates and more effectively.
             </p>
-          </div>
-          <div>
-            <h2 id="mapping-the-information-space">
+          </section>
+          <section class="chapter">
+            <h2
+              id="mapping-the-information-space"
+              class="chapter-title"
+            >
               Mapping the information space
             </h2>
-            <p>
+            <p class="details">
               To make the complex corpus of research papers on COVID-19 more accessible, our approach is to cluster papers according to their semantic similarity and plot them on a map, thereby making the research landscape explorable as a whole.
             </p>
-            <p>
+            <p class="details">
               We are currently working with the CORD-19 dataset which consists of roughly 30,000 articles. When trying to make such a large corpus of documents visually navigable in its entirity while accounting for a large number of interrelations between the papers, the complexity makes it hard to make sense of most visualizations.  Our approach is to visualize clustered objects, forming interconnected networks, in a way that makes exploration more effortless – by utilizing the design of geospatial maps. 
             </p>
-            <p>
+            <div class="captioned-image-container">
+              <div class="caption">
+                <p class="caption-title">
+                  Geospatial map of clustered papers:
+                </p>
+                <p class="caption-description">
+                  landforms and topography make it easier to distinguish clusters of similar papers.
+                </p>
+              </div>
+              <div class="captioned-image">
+                <img
+                  src="imgs/metasphere-landforms-trimmed.gif"
+                  alt="metasphere landforming animation"
+                >
+              </div>
+            </div>
+            <p class="details">
               Visualizing the research landscape on a topographic map gives the benefits of building on well-learned navigational patterns in order to make the corpus navigable in the literal sense. Researchers can pan around to explore the landscape, zooming in and out to explore topical clusters. Additionally this form of visualization gives us an ability to encode structural attributes of the corpus (i.e. relevance of authors/papers, citation structure of connected papers, etc) in spatial features (i.e. size, elevation or proximity).
             </p>
-            <p>
+            <p class="details">
               Moreover, adding heterogenous visual clues by placing the content on landforms, let’s us address the problem of uniformity in complex network visualizations. Common representations of clusters using uniform visual indicators such as colored dots tend to overwhelm the reader because they are not able to tell those indicators apart. This makes what appears to be “simple” network visualizations hardly comprehensible when visualizing a large number of interrelations. With humans being good at picking out patterns in seemingly random noise, we give the reader forms to visually latch on to, thereby making it easier to distinguish on what topical “continent” a certain piece of information “lives”.
             </p>
-          </div>
-          <div>
-            <h2 id="help-us-shape-our-tools">
+          </section>
+          <section class="chapter">
+            <h2
+              id="help-us-shape-our-tools"
+              class="chapter-title"
+            >
               Help us shape our tools
             </h2>
-            <p>
+            <p class="details">
               In order to build a better understanding of the utility of possible features for our tools, we are currently conducting a survey with the aim of learning how researchers engage in their scholarship efforts. We hope to gather insights on how research papers are being read by different kinds of researchers, how they are using software for assisting their insight generation and what aspects are missing in such software.
             </p>
-            <p>
+            <p class="details">
               Your participation in our short survey (completion should take only around 5–10 minutes) will greatly help us in making our tools as relevant as possible. So if you are a researcher – no matter from what field – please consider helping our efforts by filling out the survey below:
             </p>
-          </div>
-          <div>
-            <h2 id="roadmap-and-outlook">
+            <p class="details image-inserter">
+              <img
+                class="full-sized-image drop-shadow"
+                src="imgs/typeform-screen.png"
+                alt="Typeform survey"
+              >
+            </p>
+          </section>
+          <section class="chapter">
+            <h2
+              id="roadmap-and-outlook"
+              class="chapter-title"
+            >
               Roadmap and outlook
             </h2>
-            <div>
-              <h3>
+            <section class="section">
+              <h3 class="section-title">
                 Achievements
               </h3>
-              <p>
+              <p class="details">
                 In the last month, we focused our efforts on two aspects: the clustering of research papers into topics and the visualization of those topics on the topographic knowledge map. The first aspect is laid out by our data scientists who explore different machine learning models to effectively cluster the research and extract keywords from it. The latter aspect is shaped by our designers and developers hand-in-hand with the data scientists overseeing the language processing. We have achieved workable results in both categories.
               </p>
-            </div>
-            <div>
-              <h3>
+            </section>
+            <section class="section">
+              <h3 class="section-title">
                 Current goal
               </h3>
-              <p>
-                While working on the data processing and visualization, we have started gathering ⟶  input from the research community on desirable features for the tools. This ongoing dialogue with  researchers allows us to define crucial features for the interface of the research explorer. Our current focus lies on combining the semantic mapping with the reading experience into one coherent interface which will be released as a first public version. 
+              <p class="details">
+                While working on the data processing and visualization, we have started gathering ⟶  <a class="outside-link underlined" href="#">input from the research community</a> on desirable features for the tools. This ongoing dialogue with  researchers allows us to define crucial features for the interface of the research explorer. Our current focus lies on combining the semantic mapping with the reading experience into one coherent interface which will be released as a first public version.
               </p>
-            </div>
-            <div>
-              <h3>
+            </section>
+            <section>
+              <h3 class="section-title">
                 Roadmap
               </h3>
               <div class="roadmap">
@@ -363,29 +413,136 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div>
-            <h2 id="participate">
+            </section>
+          </section>
+          <section class="chapter">
+            <h2
+              id="participate"
+              class="chapter-title"
+            >
               Participate
             </h2>
-            <p>
+            <p class="details">
               This project is driven by volunteers, investing their expertise to develop tools that make a useful contribution to solving some of the current problems we are facing in the information sphere. We share interests in scientific research, data visualization and cartography, natural language processing and machine learning. We are open to expanding our team with anyone sharing these interests. If you want to contribute or share insights into the topics we are focusing on, we be very happy if you would contact us through the form below:
             </p>
-          </div>
-          <div>
-            <h2 id="the-team">
+            <p class="details image-inserter">
+              <img
+                class="full-sized-image drop-shadow"
+                src="imgs/typeform-screen-wo-message.png"
+                alt="Typeform survey"
+              >
+            </p>
+          </section>
+          <section class="chapter">
+            <h2
+              id="the-team"
+              class="chapter-title"
+            >
               The team
             </h2>
-            <p>
+            <p class="details">
               We are an international group of collaborators from diverse backgrounds. What brought us together is our passion for creating technical tools with a human perspective and the goal of enabling people to make more sense of an increasingly complex world.
             </p>
-            <p>
-              In addition to the core team, contributions to this project have been made by  Donatus Herre, Agnes Ferenczi, Celine Kuttler, Anja Krivograd, and Andrea Giacobino. 
+            <div class="introduction-cards">
+              <div class="introduction-card">
+                <p class="introduction-name">
+                  Julian Fleck
+                </p>
+                <p class="introduction-description">
+                  Julian is a design director and strategist working at the intersection of design and technology. He initiated metasphere as a design approach for navigating complexity and helps to shape the longterm strategy and focus of the project.
+                </p>
+                <a
+                  class="introduction-link outside-link inline"
+                  href="#"
+                >
+                  ⟶   linkedin
+                </a>
+              </div>
+              <div class="introduction-card">
+                <p class="introduction-name">
+                  Yashar Mansoori
+                </p>
+                <p class="introduction-description">
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                </P>
+                <a
+                  class="introduction-link outside-link inline"
+                  href="#"
+                >
+                  ⟶   linkedin
+                </a>
+              </div>
+              <div class="introduction-card">
+                <p class="introduction-name">
+                  Kikuo Emoto
+                </p>
+                <p class="introduction-description">
+                  Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero et accumsan.
+                </p>
+                <a
+                  class="introduction-link outside-link inline"
+                  href="#"
+                >
+                  ⟶   github
+                </a>
+              </div>
+              <div class="introduction-card">
+                <p class="introduction-name">
+                  Dario Aschero
+                </p>
+                <p class="introduction-description">
+                  Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero et accumsan.
+                </p>
+                <a
+                  class="introduction-link outside-link inline"
+                  href="#"
+                >
+                  ⟶   linkedin
+                </a>
+              </div>
+              <div class="introduction-card">
+                <p class="introduction-name">
+                  Beatriz Yumi Simões de Castro
+                </p>
+                <p class="introduction-description">
+                  Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero et accumsan.
+                </p>
+                <a
+                  class="introduction-link outside-link inline"
+                  href="#"
+                >
+                  ⟶   linkedin
+                </a>
+              </div>
+              <div class="introduction-card">
+                <p class="introduction-name">
+                  Ewa Knitter
+                </p>
+                <p class="introduction-description">
+                  As an epidemiologist, Ewas overarching goal is to contribute to disease prevention through disease surveillance and research efforts. She has experience working on various domestic and global projects in academia, NGOs, and local health departments. Her specific interests include infectious disease surveillance and spatial epidemiology.
+                </p>
+                <a
+                  class="introduction-link outside-link inline"
+                  href="#"
+                >
+                  ⟶   linkedin
+                </a>
+              </div>
+            </div>
+            <p class="details">
+              In addition to the core team, contributions to this project have been made by  <a class="outside-link underlined" href="#">Donatus Herre</a>, Agnes Ferenczi, Celine Kuttler, Anja Krivograd, and <a class="outside-link underlined" href="#">Andrea Giacobino</a>.
             </p>
-            <p>
+            <p class="details">
               Thank you all a lot ♥
             </p>
+          </section>
+          <section class="footer">
+            <a
+              class="footer-link link-to-top"
+              href="#"
+            >
+              back to top
+            </a>
           </div>
         </div>
       </div>

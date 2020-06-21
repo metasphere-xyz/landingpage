@@ -26,6 +26,11 @@ import debounce from 'lodash.debounce'
  *   Class name assigned to an element that works as a navigation menu.
  *   If there are multiple elements that have this class, only the first one
  *   is used.
+ *
+ * @vue-prop {Number} [section-capture-margin="section-capture-margin"]
+ *
+ *   A section is considered as passed if the top position of the section is
+ *   less than this number.
  */
 export const SectionNavigatorMixin = {
   props: {
@@ -63,9 +68,6 @@ export const SectionNavigatorMixin = {
     },
     firstSectionId () {
       return (this.sectionIds.length > 0) ? this.sectionIds[0] : undefined
-    },
-    firstSection () {
-      return this.firstSectionId ? this.section(this.firstSectionId) : null
     },
     firstSectionState () {
       if (this.firstSectionId) {
@@ -169,23 +171,22 @@ export const SectionNavigatorMixin = {
       if (process.env.NODE_ENV !== 'production') {
         console.log('scroll', event)
       }
-      // determines if the menu is folded.
-      if (this.firstSection) {
-        const { bottom } = this.firstSection.getBoundingClientRect()
-        if (process.env.NODE_ENV !== 'production') {
-          console.log(`checking scroll: ${window.scrollY} > ${bottom}`)
-        }
-        if (bottom < 0) {
-          this.isFolded = true
-        } else {
-          this.isFolded = false
-        }
+      // folds the menu if the top of the navigator is out of the window.
+      const { top: navigatorTop } = this.$el.getBoundingClientRect()
+      if (navigatorTop < 0) {
+        this.isFolded = true
+      } else {
+        this.isFolded = false
       }
       // identifies the current section.
       // the first section is activated if no other sections are active.
       let isFirstSectionActive = true
       for (let i = 1; i < this.sectionIds.length; ++i) {
         let isActive = false
+        // a section is active
+        // if both of the following two conditions are satisfied,
+        // 1. the section is passed
+        // 2. the next section is not passed
         const sectionId = this.sectionIds[i]
         const section = this.section(sectionId)
         if (section) {

@@ -1,12 +1,14 @@
 .section-navigator {
   position: relative;
+  margin-top: 5rem;
   /* TODO: how do you handle an oversized element? */
   overflow-x: hidden;
 }
+
 .navigation-menu {
   position: absolute;
   display: inline-block;
-  margin-left: 110px;
+  margin-left: 15rem;
   transition-property: top, width;
   transition-duration: 0.2s;
 }
@@ -46,7 +48,7 @@
    * TODO: should a long menu item be represented in multiple lines?
    */
   overflow: hidden;
-  text-overflow: none;
+  text-overflow: clip;
   white-space: nowrap;
 }
 .navigation-menu-item:hover {
@@ -55,9 +57,9 @@
 .navigation-menu-item::before {
   position: absolute;
   content: "○";
-  left: -2em;
+  left: -4em;
   /* fills the gap between a bullet and item body to capture a pointer. */
-  padding-right: 2em;
+  padding-right: 4em;
   /* fills the gap between menu items. */
   padding-bottom: 0.8em;
 }
@@ -73,19 +75,20 @@
 }
 
 .navigation-contents {
-  /* padding-top is reserved for the navigation menu. */
-  padding-top: 12em;
-  margin-left: 110px;
-  width: calc(100% - 110px);
+  /* margin-top is reserved for the navigation menu. */
+  margin-top: 16em;
+  width: calc(100% - 15rem);
+  max-width: 800px;
+  margin-left: 15rem;
   transition: margin-left 0.2s;
 }
 .is-slid-in .navigation-contents {
-  margin-left: calc(110px + 15.5em);
+  margin-left: calc(15rem + 15.5em);
 }
 
 .roadmap {
   font-size: 0.8rem;
-  line-height: 1.5em;
+  line-height: normal;
   /* uncomment if letter-spacing matters. */
   /* letter-spacing: -0.02px; */
   /* letter-spacing: -0.005em; */
@@ -96,6 +99,10 @@
    * TODO: do I have to consider about the screen size?
    */
   -webkit-text-size-adjust: 100%;
+}
+/* overrides .chapter p */
+.roadmap p {
+  margin: 0 0;
 }
 
 .roadmap-milestone {
@@ -170,7 +177,7 @@
   margin: 0 0;
 }
 
-.roadmap-task-description {
+.roadmap-task .roadmap-task-description {
   display: flex;
   align-items: center;
   margin: 0 0;
@@ -199,6 +206,7 @@
   flex-shrink: 0;
   margin: 0 0;
   padding: 0.4em 1.2em;
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.8em;
   line-height: normal;
   letter-spacing: normal;
@@ -242,22 +250,25 @@
   justify-content: start;
   align-items: start;
   flex-wrap: wrap;
+  margin: 6rem 0;
 }
 
 .introduction-card {
   display: block;
-  width: 17.5rem;
-  margin-right: 4.0rem;
-  margin-bottom: 6.0rem;
+  width: 17.5em;
+  margin-right: 2.5rem;
+  margin-bottom: 4.0rem;
+  font-size: 0.8rem;
+  line-height: normal;
 }
 
-.introduction-name {
+.introduction-card .introduction-name {
   margin-top: 0;
   margin-bottom: 1.2rem;
   font-weight: bold;
 }
 
-.introduction-description {
+.introduction-card .introduction-description {
   margin: 0 0;
 }
 
@@ -265,7 +276,11 @@
   display: block;
 }
 
-.floating-image {
+p.details.image-inserter {
+  margin: 6.0rem 0;
+}
+
+.full-sized-image.drop-shadow {
   width: calc(100% - 20px);
   box-sizing: border-box;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
@@ -277,6 +292,7 @@
   flex-wrap: nowrap;
   justify-content: start;
   align-items: start;
+  margin: 4rem 0;
   padding-left: 4.5rem;
   border-left: 1px dashed #8E949E;
 }
@@ -287,21 +303,22 @@
   margin: 4.5rem 4.5rem;
   margin-left: 0;
   font-size: 0.8rem;
+  line-height: 1.5em;
+}
+
+/* overrides .chapter p */
+.caption p {
+  margin: 0 0;
 }
 
 .caption-title {
   font-weight: bold;
-  margin: 0 0;
 }
 .caption-title::before {
   content: "⟶";
   display: block;
   font-weight: normal;
   letter-spacing: -0.1em;
-}
-
-.caption-description {
-  margin: 0 0;
 }
 
 .captioned-image {
@@ -311,4 +328,10 @@
 
 .captioned-image img {
   width: 100%;
+}
+
+.version-code {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.8rem;
+  color: #8E949E;
 }

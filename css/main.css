@@ -2,154 +2,6 @@
   font-family: 'IBM Plex Mono', monospace;
 }
 
-/*
-#link-to-top:hover {
-  text-decoration: none;
-}
-
-#link-to-top::before {
-  content: '\21E7  ';
-}
-
-#link-to-top:hover::before {
-  content: '\2B06  ';
-} */
-
-/*
-h1.title {
-  margin: 0;
-  font-weight: 800;
-  font-size: 60px;
-  line-height: 46px;
-  padding-top: 101px;
-  padding-left: 110px;
-} */
-
-/*
-section {
-  padding: 110px 110px;
-} */
-
-/*
-section div.container {
-  max-width: 960px;
-} */
-
-/*
-section.announcement {
-  background: #FAFAFA;
-}
-
-section.statement p {
-  font-weight: 600;
-  font-size: 32px;
-  letter-spacing: -0.2px;
-  line-height: 36px;
-}
-
-section.announcement div.header {
-  display: flex;
-  align-items: center;
-}
-
-section.announcement div.header {
-  font-size: 13px;
-  font-weight: 500px;
-}
-
-section.announcement div.header p {
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-section.announcement div.header p.badge {
-  padding: 4px 12px;
-  border-radius: 10px;
-  color: #FFFFFF;
-  background: #EA386E;
-}
-
-section.announcement div.header p.date {
-  color: #8E949E;
-  margin-left: 25px;
-}
-
-section.announcement div.title {
-  margin: 42px 0px;
-  font-size: 24px;
-}
-
-section.announcement div.contents {
-  font-family: IBM Plex Mono;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  letter-spacing: -0.01em;
-  line-height: 30px;
-}
-
-section.announcement div.footer {
-  font-weight: bold;
-  font-size: 18px;
-  letter-spacing: -0.01em;
-  margin-top: 42px;
-}
-
-section.announcement div.footer p {
-  margin: 0px;
-  line-height: 30px;
-}
-
-section.contents {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 32px;
-  letter-spacing: -0.2px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
-
-section.footer {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  max-width: 980px;
-}
-
-section.footer div.left {
-  display: flex;
-  align-items: center;
-  font-size: 18px;
-}
-
-section.footer div.left a {
-  display: block;
-  font-weight: bold;
-  text-decoration: none;
-  color: #404245;
-  margin-right: 40px;
-}
-
-section.footer div.left a:last-child {
-  margin-right: 0px;
-}
-
-section.footer div.right p.version {
-  font-family: IBM Plex Mono;
-  font-style: normal;
-  font-size: 13px;
-  font-weight: 500;
-  color: #8E949E;
-  margin: 0px;
-}
-*/
-
-/*
-.warning {
-  font-family: 'emoji';
-} */
-
 .project-list {
   font-size: 2.0rem;
 }
@@ -161,48 +13,10 @@ section.footer div.right p.version {
   border-bottom: none;
 }
 
+/* basic definition of project-heading is in common.css */
 .project-heading {
-  display: flex;
-  padding: 0.8em 0;
+  margin: 0.8em 0;
   cursor: pointer;
-}
-a.project-heading {
-  color: #404245;
-  text-decoration: none;
-}
-
-.project-heading .project-tag {
-  width: 12em;
-  flex-shrink: 0;
-  margin: 0 0;
-  font-size: 0.8rem;
-}
-
-.project-heading .project-title {
-  margin: 0 0;
-}
-
-.project-tag span {
-  display: inline-block;
-  margin: 0 0;
-  padding: 0.4em 1.2em;
-  line-height: normal;
-  font-family: 'IBM Plex Mono', monospace;
-  font-style: normal;
-  color: #FFFFFF;
-  background: #BDBDBD;
-  border-radius: 1.0em;
-}
-
-.project-heading:hover .project-tag-tool {
-  background: #CADA08;
-}
-.project-heading:hover .project-tag-announcement {
-  background: #FF2E60;
-}
-.project-heading:hover .project-tag-article {
-  /* TBD */
-  background: #2E5AFF;
 }
 
 .project-details {
@@ -211,6 +25,7 @@ a.project-heading {
   transition: height 0.2s;
 }
 .project.is-folded .project-details {
+  /* height is programatically manipulated by project-list-mixin.js. */
   height: 0;
 }
 

@@ -4,6 +4,14 @@
  * @namespace ProjectListMixin
  *
  * @memberof module:landingpage/components
+ *
+ * @vue-prop {String} [project-heading-class-name="project-heading"]
+ *
+ *   Class name of a heading element of a project.
+ *
+ * @vue-prop {String} [project-details-class-name="project-details"]
+ *
+ *   Class name of a project details element.
  */
 export const ProjectListMixin = {
   props: {

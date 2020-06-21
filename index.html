@@ -11,175 +11,173 @@
   </head>
   <body>
     <div class="container">
-      <div class="content-body">
-        <h1 class="title">
-          metasphere
-        </h1>
-        <section class="introduction">
-          <p>
-            We are an interdisciplinary team of researchers,  data scientists, designers and developers working  on digital systems to facilitate the transformation of information to knowledge.
-          </p>
-          <p>
-            Our approach focusses on the flow of information with the aim to make complex interactions between a multitude of actors in the knowledge sphere more accessible, transparent and tangible.
-          </p>
-        </section>
-        <section class="chapter">
-          <h2 class="chapter-title">
-            Current projects and insights
-          </h2>
-          <!--
-            Behavior of a project list is controlled by
-            a Vue mixin `project-list-mixin.js`.
-          -->
-          <div
-            id="project-list"
-            class="project-list"
-          >
-            <div class="project">
-              <a
-                class="project-heading"
-                href="research-explorer.html"
-              >
-                <p class="project-tag">
-                  <span class="project-tag-tool">tool</span>
-                </p>
-                <p class="project-title">
-                  Overview: research explorer
-                </p>
-              </a>
-            </div>
-            <div
-              id="mapping-the-covid-19-information-space"
-              class="project"
-              :class="projectStateClass('mapping-the-covid-19-information-space')"
+      <h1 class="title">
+        metasphere
+      </h1>
+      <section class="introduction">
+        <p>
+          We are an interdisciplinary team of researchers,  data scientists, designers and developers working  on digital systems to facilitate the transformation of information to knowledge.
+        </p>
+        <p>
+          Our approach focusses on the flow of information with the aim to make complex interactions between a multitude of actors in the knowledge sphere more accessible, transparent and tangible.
+        </p>
+      </section>
+      <section class="chapter">
+        <h2 class="chapter-title">
+          Current projects and insights
+        </h2>
+        <!--
+          Behavior of a project list is controlled by
+          a Vue mixin `project-list-mixin.js`.
+        -->
+        <div
+          id="project-list"
+          class="project-list"
+        >
+          <div class="project">
+            <a
+              class="project-heading"
+              href="research-explorer.html"
             >
-              <div class="project-heading">
-                <p class="project-tag">
-                  <span class="project-tag-announcement">announcement</span>
-                </p>
-                <p class="project-title">
-                  Mapping the COVID-19 information space
-                </p>
-              </div>
-              <div class="project-details">
-                <p>
-                  As research into COVID-19 is surging and a multitude of routes are being explored, the volume of produced papers makes maintaining oversight over the current state of research challenging. With the aim of getting new research teams working on COVID-19 related topics up to speed faster, an international group of volunteers is building a visual experience to provide a landscape of the current research as well as tools to enable researchers to collectively work through the amount of information being produced at faster rates and more effectively.
-                </p>
-                <p>
-                  ⟶   <a class="internal-link" href="research-explorer.html">Learn more</a> about our work on the COVID-19 research landscape.
-                  <span class="notice">
-                    We are looking for contributors ⟶ <a class="internal-link" href="research-explorer.html#participate">Find out</a> if you can help.
-                  </span>
-                </p>
-              </div>
+              <p class="project-tag">
+                <span class="project-tag-tool">tool</span>
+              </p>
+              <p class="project-title">
+                Overview: research explorer
+              </p>
+            </a>
+          </div>
+          <div
+            id="mapping-the-covid-19-information-space"
+            class="project"
+            :class="projectStateClass('mapping-the-covid-19-information-space')"
+          >
+            <div class="project-heading">
+              <p class="project-tag">
+                <span class="project-tag-announcement">announcement</span>
+              </p>
+              <p class="project-title">
+                Mapping the COVID-19 information space
+              </p>
             </div>
-            <div class="project">
-              <div class="project-heading">
-                <p class="project-tag">
-                  <span class="project-tag-article">article</span>
-                </p>
-                <p class="project-title">
-                  The fractal nature of information
-                </p>
-              </div>
-            </div>
-            <div class="project">
-              <div class="project-heading">
-                <p class="project-tag">
-                  <span class="project-tag-article">article</span>
-                </p>
-                <p class="project-title">
-                  Clustering with (supervised) hLDA
-                </p>
-              </div>
-            </div>
-            <div class="project">
-              <div class="project-heading">
-                <p class="project-tag">
-                  <span class="project-tag-article">article</span>
-                </p>
-                <p class="project-title">
-                  Perlin noise for contour generation
-                </p>
-              </div>
+            <div class="project-details">
+              <p>
+                As research into COVID-19 is surging and a multitude of routes are being explored, the volume of produced papers makes maintaining oversight over the current state of research challenging. With the aim of getting new research teams working on COVID-19 related topics up to speed faster, an international group of volunteers is building a visual experience to provide a landscape of the current research as well as tools to enable researchers to collectively work through the amount of information being produced at faster rates and more effectively.
+              </p>
+              <p>
+                ⟶   <a class="internal-link" href="research-explorer.html">Learn more</a> about our work on the COVID-19 research landscape.
+                <span class="notice">
+                  We are looking for contributors ⟶ <a class="internal-link" href="research-explorer.html#participate">Find out</a> if you can help.
+                </span>
+              </p>
             </div>
           </div>
-        </section>
-        <section class="chapter">
-          <h2 class="chapter-title">
-            The metasphere approach
-          </h2>
-          <p class="emphasized">
-            Our  goal is to represent reality in ways that offer high resolution in terms of details while maintaining, to the extent possible, the complex nature of reality.
-          </p>
-          <p class="details">
-            The idea here is to devise an approach and ultimately tools to a) allow for the preservation of complexity and b) make visible and thereby explorable the complex nature of information attributes. These two elements are vastly important to allow for the ability to follow trails of thoughts but also for the replicability of ideas and transparency of produced knowledge.
-          </p>
-          <p class="details">
-            The approach is informed by research that has been done by early hypertext pioneers like Theodor Nelson or Vannevar Bush, but focuses more on the question of how to allow for the preservation of complexity by leveraging  visual and navigational metaphors borrowed from representations of the physical space, like maps (with the benefits of zooming, exploring, etc.) to represent networked information.
-          </p>
-        </section>
-        <section class="chapter">
-          <h2 class="chapter-title">
-            The team
-          </h2>
-          <p>
-            We are an international group of collaborators from diverse backgrounds. What brought us together is our passion for creating technical tools with a human perspective and the goal of enabling people to make more sense of an increasingly complex world.
-          </p>
-          <p>
-            Current team members are
-            <a
-              class="outside-link underlined"
-              href="#"
-            >
-              Julian Fleck
-            </a>,
-            <a
-              class="outside-link underlined"
-              href="#"
-            >
-              Yashar Mansoori
-            </a>,
-            <a
-              class="outside-link underlined"
-              href="#"
-            >
-              Kikuo Emoto
-            </a>,
-            <a
-              class="outside-link underlined"
-              href="#"
-            >
-              Dario Aschero
-            </a>,
-            <a
-              class="outside-link underlined"
-              href="#"
-            >
-              Beatriz Yumi Simões de Castro
-            </a>,
-            <a
-              class="outside-link underlined"
-              href="#"
-            >
-              Ewa Knitter
-            </a>,
-            <a
-              class="outside-link underlined"
-              href="#"
-            >
-              Ricardo Saveedra
-            </a>
-            and
-            <a
-              class="outside-link underlined"
-              href="#"
-            >
-              Alexandre Peschel
-            </a>.
-          </p>
-        </section>
-      </div>
+          <div class="project">
+            <div class="project-heading">
+              <p class="project-tag">
+                <span class="project-tag-article">article</span>
+              </p>
+              <p class="project-title">
+                The fractal nature of information
+              </p>
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-heading">
+              <p class="project-tag">
+                <span class="project-tag-article">article</span>
+              </p>
+              <p class="project-title">
+                Clustering with (supervised) hLDA
+              </p>
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-heading">
+              <p class="project-tag">
+                <span class="project-tag-article">article</span>
+              </p>
+              <p class="project-title">
+                Perlin noise for contour generation
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="chapter">
+        <h2 class="chapter-title">
+          The metasphere approach
+        </h2>
+        <p class="emphasized">
+          Our  goal is to represent reality in ways that offer high resolution in terms of details while maintaining, to the extent possible, the complex nature of reality.
+        </p>
+        <p class="details">
+          The idea here is to devise an approach and ultimately tools to a) allow for the preservation of complexity and b) make visible and thereby explorable the complex nature of information attributes. These two elements are vastly important to allow for the ability to follow trails of thoughts but also for the replicability of ideas and transparency of produced knowledge.
+        </p>
+        <p class="details">
+          The approach is informed by research that has been done by early hypertext pioneers like Theodor Nelson or Vannevar Bush, but focuses more on the question of how to allow for the preservation of complexity by leveraging  visual and navigational metaphors borrowed from representations of the physical space, like maps (with the benefits of zooming, exploring, etc.) to represent networked information.
+        </p>
+      </section>
+      <section class="chapter">
+        <h2 class="chapter-title">
+          The team
+        </h2>
+        <p>
+          We are an international group of collaborators from diverse backgrounds. What brought us together is our passion for creating technical tools with a human perspective and the goal of enabling people to make more sense of an increasingly complex world.
+        </p>
+        <p>
+          Current team members are
+          <a
+            class="outside-link underlined"
+            href="#"
+          >
+            Julian Fleck
+          </a>,
+          <a
+            class="outside-link underlined"
+            href="#"
+          >
+            Yashar Mansoori
+          </a>,
+          <a
+            class="outside-link underlined"
+            href="#"
+          >
+            Kikuo Emoto
+          </a>,
+          <a
+            class="outside-link underlined"
+            href="#"
+          >
+            Dario Aschero
+          </a>,
+          <a
+            class="outside-link underlined"
+            href="#"
+          >
+            Beatriz Yumi Simões de Castro
+          </a>,
+          <a
+            class="outside-link underlined"
+            href="#"
+          >
+            Ewa Knitter
+          </a>,
+          <a
+            class="outside-link underlined"
+            href="#"
+          >
+            Ricardo Saveedra
+          </a>
+          and
+          <a
+            class="outside-link underlined"
+            href="#"
+          >
+            Alexandre Peschel
+          </a>.
+        </p>
+      </section>
       <div class="footer">
         <a
           class="footer-link outside-link"

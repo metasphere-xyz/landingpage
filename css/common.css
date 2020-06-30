@@ -14,6 +14,12 @@ html {
   margin-left: 15rem;
 }
 
+@media screen and (max-width: 959px) {
+  .container {
+    margin-left: 5rem;
+  }
+}
+
 .title {
   margin: 8rem 0;
   font-weight: 300;

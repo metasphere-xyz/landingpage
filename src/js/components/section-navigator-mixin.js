@@ -101,7 +101,7 @@ export const SectionNavigatorMixin = {
       console.log('beforeMount')
     }
     this.debounce.hideMenu = debounce(() => this.hideMenu(), 200)
-    this.debounce.cancelImmunity = debounce(() => this.cancelImmunity(), 50)
+    this.debounce.cancelImmunity = debounce(() => this.cancelImmunity(), 200)
   },
   mounted () {
     if (process.env.NODE_ENV !== 'production') {
@@ -184,12 +184,18 @@ export const SectionNavigatorMixin = {
           // prevents following a link and
           // the default handler attached to a window that closes the menu
           event.preventDefault()
+          // cancels a hideMenu that may have been called
+          // on a preceding pointerout event
+          this.debounce.hideMenu.cancel()
         }
       } else {
         // prevents following a link and
         // the default handler attached to a window that closes the menu
         event.preventDefault()
         this.isVisible = true
+        // cancels a hideMenu that may have been called
+        // on a preceding pointerout event
+        this.debounce.hideMenu.cancel()
       }
     },
     onPointerover (event) {

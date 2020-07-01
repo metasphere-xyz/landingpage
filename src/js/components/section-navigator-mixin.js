@@ -119,11 +119,9 @@ export const SectionNavigatorMixin = {
     this.menuElement.addEventListener('pointerout', event => {
       this.onPointerout(event)
     })
-    // catches any clicks to hide the menu
-    window.addEventListener('click', event => {
-      if (!event.defaultPrevented) {
-        this.isVisible = false
-      }
+    // catches any touch to hide the menu
+    window.addEventListener('touchstart', event => {
+      this.debounce.hideMenu()
     })
     // monitors scroll
     window.addEventListener('scroll', event => {
@@ -181,20 +179,18 @@ export const SectionNavigatorMixin = {
         if (!this.isImmune) {
           this.isVisible = false
         } else {
-          // prevents following a link and
-          // the default handler attached to a window that closes the menu
+          // prevents following a link
           event.preventDefault()
           // cancels a hideMenu that may have been called
-          // on a preceding pointerout event
+          // on a preceding pointerout or touchstart event
           this.debounce.hideMenu.cancel()
         }
       } else {
-        // prevents following a link and
-        // the default handler attached to a window that closes the menu
+        // prevents following a link
         event.preventDefault()
         this.isVisible = true
         // cancels a hideMenu that may have been called
-        // on a preceding pointerout event
+        // on a preceding pointerout or touchstart event
         this.debounce.hideMenu.cancel()
       }
     },

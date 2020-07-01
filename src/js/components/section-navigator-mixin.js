@@ -101,7 +101,7 @@ export const SectionNavigatorMixin = {
       console.log('beforeMount')
     }
     this.debounce.hideMenu = debounce(() => this.hideMenu(), 200)
-    this.debounce.cancelImmunity = debounce(() => this.cancelImmunity(), 50)
+    this.debounce.cancelImmunity = debounce(() => this.cancelImmunity(), 200)
   },
   mounted () {
     if (process.env.NODE_ENV !== 'production') {
@@ -119,11 +119,9 @@ export const SectionNavigatorMixin = {
     this.menuElement.addEventListener('pointerout', event => {
       this.onPointerout(event)
     })
-    // catches any clicks to hide the menu
-    window.addEventListener('click', event => {
-      if (!event.defaultPrevented) {
-        this.isVisible = false
-      }
+    // catches any touch to hide the menu
+    window.addEventListener('touchstart', event => {
+      this.debounce.hideMenu()
     })
     // monitors scroll
     window.addEventListener('scroll', event => {
@@ -181,15 +179,19 @@ export const SectionNavigatorMixin = {
         if (!this.isImmune) {
           this.isVisible = false
         } else {
-          // prevents following a link and
-          // the default handler attached to a window that closes the menu
+          // prevents following a link
           event.preventDefault()
+          // cancels a hideMenu that may have been called
+          // on a preceding pointerout or touchstart event
+          this.debounce.hideMenu.cancel()
         }
       } else {
-        // prevents following a link and
-        // the default handler attached to a window that closes the menu
+        // prevents following a link
         event.preventDefault()
         this.isVisible = true
+        // cancels a hideMenu that may have been called
+        // on a preceding pointerout or touchstart event
+        this.debounce.hideMenu.cancel()
       }
     },
     onPointerover (event) {

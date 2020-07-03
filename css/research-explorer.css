@@ -12,6 +12,11 @@
   transition-property: top, width;
   transition-duration: 0.2s;
 }
+@media screen and (max-width: 959px) {
+  .navigation-menu {
+    margin-left: 2.5rem;
+  }
+}
 .is-folded .navigation-menu {
   position: fixed;
   width: 0;
@@ -26,6 +31,11 @@
 }
 .is-folded.is-slid-in .navigation-menu {
   width: 15em;
+}
+@media screen and (max-width: 959px) {
+  .isfolded.is-slid-in .navigation-menu {
+    width: 2.5rem;
+  }
 }
 
 .navigation-menu-item {
@@ -63,6 +73,12 @@
   /* fills the gap between menu items. */
   padding-bottom: 0.8em;
 }
+@media screen and (max-width: 959px) {
+  .navigation-menu-item::before {
+    left: -2.0em;
+    padding-right: 2.0em;
+  }
+}
 .section-navigator:not(.is-folded) .navigation-menu-item:last-of-type::before {
   /*
    * .section-navigator:not(is-folded) makes the menu sensitive
@@ -84,6 +100,15 @@
 }
 .is-slid-in .navigation-contents {
   margin-left: calc(15rem + 15.5em);
+}
+@media screen and (max-width: 959px) {
+  .navigation-contents {
+    width: calc(100% - 2.5rem);
+    margin-left: 2.5rem;
+  }
+  .is-slid-in .navigation-contents {
+    margin-left: calc(5rem + 15.5em);
+  }
 }
 
 .roadmap {
@@ -150,6 +175,11 @@
   padding: 1.2em 0;
   border-top: 1px solid #E5E5E5;
 }
+@media screen and (max-width: 959px) {
+  .roadmap-module {
+    display: block;
+  }
+}
 .roadmap-level-2:last-of-type .roadmap-module {
   border-bottom: 1px solid #E5E5E5;
 }
@@ -165,9 +195,20 @@
   font-weight: bold;
   color: #8E949E;
 }
+@media screen and (max-width: 959px) {
+  .roadmap-module-name {
+    width: auto;
+    margin: 0.5em 0;
+  }
+}
 
 .roadmap-task-list {
   width: calc(100% - 4.5rem);
+}
+@media screen and (max-width: 959px) {
+  .roadmap-task-list {
+    width: 100%;
+  }
 }
 
 .roadmap-task {
@@ -296,6 +337,12 @@ p.details.image-inserter {
   padding-left: 4.5rem;
   border-left: 1px dashed #8E949E;
 }
+@media screen and (max-width: 959px) {
+  .captioned-image-container {
+    flex-wrap: wrap;
+    padding-left: 2rem;
+  }
+}
 
 .caption {
   width: 8.0rem;
@@ -304,6 +351,14 @@ p.details.image-inserter {
   margin-left: 0;
   font-size: 0.8rem;
   line-height: 1.5em;
+}
+@media screen and (max-width: 959px) {
+  .caption {
+    width: auto;
+    flex-shrink: 1;
+    margin: 2rem 2rem;
+    margin-left: 0;
+  }
 }
 
 /* overrides .chapter p */
@@ -320,10 +375,21 @@ p.details.image-inserter {
   font-weight: normal;
   letter-spacing: -0.1em;
 }
+@media screen and (max-width: 959px) {
+  .caption-title::before {
+    content: "↓";
+  }
+}
 
 .captioned-image {
   width: calc(100% - 8.0rem - 4.5rem);
   min-width: 480px;
+}
+@media screen and (max-width: 959px) {
+  .captioned-image {
+    width: 100%;
+    min-width: 0;
+  }
 }
 
 .captioned-image img {

@@ -48,10 +48,15 @@ export const SectionNavigatorMixin = {
     sectionStates: {},
     isFolded: false,
     isVisible: false,
+    // isImmune: the menu does not accept a click event for a short period
+    // after a pointermove event. during this immune period a pointermove event
+    // issued just after a user touch the menu to open is ignored.
+    isImmune: false,
     // function to be delayed.
     // initialized just before mounted.
     debounce: {
-      hideMenu: () => {}
+      hideMenu: () => {},
+      cancelImmunity: () => {}
     }
   },
   computed: {
@@ -96,6 +101,7 @@ export const SectionNavigatorMixin = {
       console.log('beforeMount')
     }
     this.debounce.hideMenu = debounce(() => this.hideMenu(), 200)
+    this.debounce.cancelImmunity = debounce(() => this.cancelImmunity(), 200)
   },
   mounted () {
     if (process.env.NODE_ENV !== 'production') {
@@ -112,6 +118,10 @@ export const SectionNavigatorMixin = {
     })
     this.menuElement.addEventListener('pointerout', event => {
       this.onPointerout(event)
+    })
+    // catches any touch to hide the menu
+    window.addEventListener('touchstart', event => {
+      this.debounce.hideMenu()
     })
     // monitors scroll
     window.addEventListener('scroll', event => {
@@ -154,12 +164,46 @@ export const SectionNavigatorMixin = {
     hideMenu () {
       this.isVisible = false
     },
+    cancelImmunity () {
+      this.isImmune = false
+    },
+    onClick (event) {
+      if (process.env.NODE_ENV !== 'production') {
+        console.log('click', event, this.isVisible)
+      }
+      // nothing should be done if the menu is not folded
+      if (!this.isFolded) {
+        return
+      }
+      if (this.isVisible) {
+        if (!this.isImmune) {
+          this.isVisible = false
+        } else {
+          // prevents following a link
+          event.preventDefault()
+          // cancels a hideMenu that may have been called
+          // on a preceding pointerout or touchstart event
+          this.debounce.hideMenu.cancel()
+        }
+      } else {
+        // prevents following a link
+        event.preventDefault()
+        this.isVisible = true
+        // cancels a hideMenu that may have been called
+        // on a preceding pointerout or touchstart event
+        this.debounce.hideMenu.cancel()
+      }
+    },
     onPointerover (event) {
       if (process.env.NODE_ENV !== 'production') {
         console.log('pointerover', event, this.isVisible)
       }
       this.debounce.hideMenu.cancel()
-      this.isVisible = true
+      if (!this.isVisible) {
+        this.isVisible = true
+        this.isImmune = true
+        this.debounce.cancelImmunity()
+      }
     },
     onPointerout (event) {
       if (process.env.NODE_ENV !== 'production') {

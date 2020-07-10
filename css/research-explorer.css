@@ -93,10 +93,9 @@
 .navigation-contents {
   /* margin-top is reserved for the navigation menu. */
   margin-top: 16em;
-  width: calc(100% - 12rem);
+  width: calc(100% - 15rem);
   max-width: 800px;
-  margin-left: 12rem;
-  margin-right: 12rem;
+  margin-left: 15rem;
   transition: margin-left 0.2s;
 }
 .is-slid-in .navigation-contents {

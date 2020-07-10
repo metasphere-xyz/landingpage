@@ -72,6 +72,7 @@ html {
 .chapter {
   margin-top: 10rem;
   font-size: 1.5rem;
+  margin-right: 10rem;
 }
 @media screen and (max-width: 959px) {
   .chapter {

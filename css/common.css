@@ -11,12 +11,14 @@ html {
 .container {
   max-width: 800px;
   /* TODO: mobile environment should need a smaller margin.  */
-  margin-left: 15rem;
+  margin-left: 12rem;
+  margin-right: 12rem;
 }
 
 @media screen and (max-width: 959px) {
   .container {
     margin-left: 2.5rem;
+    margin-right: 2.5rem;
   }
 }
 
@@ -176,7 +178,7 @@ a.project-heading {
 .project-tag span {
   display: inline-block;
   margin: 0 0;
-  padding: 0.4em 1.2em;
+  padding: 0.4em 0.8em 0.48em;
   line-height: normal;
   font-family: 'IBM Plex Mono', monospace;
   font-style: normal;

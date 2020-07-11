@@ -8,7 +8,7 @@
 .navigation-menu {
   position: absolute;
   display: inline-block;
-  margin-left: 15rem;
+  margin-left: 10rem;
   transition-property: top, width;
   transition-duration: 0.2s;
 }
@@ -93,9 +93,9 @@
 .navigation-contents {
   /* margin-top is reserved for the navigation menu. */
   margin-top: 16em;
-  width: calc(100% - 15rem);
+  width: calc(100% - 8rem);
   max-width: 800px;
-  margin-left: 15rem;
+  margin-left: 10rem;
   transition: margin-left 0.2s;
 }
 .is-slid-in .navigation-contents {
@@ -293,14 +293,25 @@
   flex-wrap: wrap;
   margin: 6rem 0;
 }
+@media screen and (max-width: 959px) {
+  .introduction-cards {
+    margin: 3rem 0;
+  }
+}
+
 
 .introduction-card {
   display: block;
-  width: 17.5em;
+  width: 20em;
   margin-right: 2.5rem;
   margin-bottom: 4.0rem;
   font-size: 0.8rem;
   line-height: normal;
+}
+@media screen and (max-width: 959px) {
+  .introduction-card {
+    margin-right: 0;
+  }
 }
 
 .introduction-card .introduction-name {

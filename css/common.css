@@ -11,14 +11,22 @@ html {
 .container {
   max-width: 800px;
   /* TODO: mobile environment should need a smaller margin.  */
+<<<<<<< HEAD
   margin-left: 12rem;
   margin-right: 12rem;
+=======
+  margin-left: 10rem;
+>>>>>>> temp
 }
 
 @media screen and (max-width: 959px) {
   .container {
     margin-left: 2.5rem;
+<<<<<<< HEAD
     margin-right: 2.5rem;
+=======
+    margin-right: 2rem;
+>>>>>>> temp
   }
 }
 
@@ -51,6 +59,11 @@ html {
   margin: 4rem 0;
   font-weight: 600;
 }
+@media screen and (max-width: 959px) {
+  .chapter-title {
+    margin-bottom: 3rem;
+  }
+}
 
 .section-title {
   margin: 2rem 0;
@@ -62,21 +75,27 @@ html {
 .introduction {
   margin: 10rem 0;
   font-size: 2rem;
+  margin-right: 10rem;
 }
 @media screen and (max-width: 959px) {
   .introduction {
     font-size: 1.5rem;
+    margin-top: 5rem;
+    margin-right: 0;
   }
 }
 
 .chapter {
   margin-top: 10rem;
+  margin-right: 8rem;
   font-size: 1.5rem;
   margin-right: 10rem;
 }
 @media screen and (max-width: 959px) {
   .chapter {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    margin-top: 6rem;
+    margin-right: 3rem;
   }
 }
 .chapter p {
@@ -132,18 +151,20 @@ p.details {
   border-bottom: none;
 }
 
-.link-to-top {
+.link-to-overview {
   color: #333333;
   text-decoration: none;
 }
-.link-to-top:hover {
+.link-to-overview:hover {
 }
-.link-to-top::before {
-  content: '\21E7';
+.link-to-overview::before {
+  content: '⟵';
+  /* content: '\21E7'; */
   padding-right: 0.5em;
 }
-.link-to-top:hover::before {
-  content: '\2B06';
+.link-to-overview:hover::before {
+  content: '🡐';
+  /* content: '\2B06'; */
 }
 
 .project-heading {
@@ -166,9 +187,12 @@ a.project-heading {
   margin: 0 0;
   font-size: 0.8rem;
 }
-@media screen and (max-width: 959px) {
+@media screen and (max-width: 400px) {
   .project-heading .project-tag {
     flex-shrink: 1;
+  }
+  .project-tag {
+    display: none;
   }
 }
 

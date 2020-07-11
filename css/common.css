@@ -1,11 +1,17 @@
 /* imports Inter font family. */
 @import url('https://rsms.me/inter/inter.css');
 
-html {
+html, body {
   /* Inter font family by default. */
   font-family: Inter, Helvetica, sans-serif;
   font-style: normal;
   color: #404245;
+  margin: 0;
+}
+@media screen and (min-width: 1199px) {
+  body {
+    margin-left: 10rem;
+  }
 }
 
 .container {
@@ -20,6 +26,8 @@ html {
     margin-right: 2rem;
   }
 }
+
+
 
 .title {
   margin: 8rem 0;
@@ -57,7 +65,8 @@ html {
 }
 
 .section-title {
-  margin: 2rem 0;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
   font-size: 1.1rem;
   font-weight: normal;
   color: #8E949E;
@@ -73,6 +82,11 @@ html {
     font-size: 1.5rem;
     margin-top: 5rem;
     margin-right: 0;
+  }
+}
+@media screen and (min-width: 1199px) {
+  .introduction {
+    margin-right: 4rem;
   }
 }
 
@@ -92,6 +106,11 @@ html {
   line-height: 1.65em;
 }
 @media screen and (max-width: 959px) {
+  .chapter p {
+    margin-right: 4rem;
+  }
+}
+@media screen and (min-width: 1199px) {
   .chapter p {
     margin-right: 3rem;
   }
@@ -127,6 +146,7 @@ p.details {
   text-decoration: none;
 }
 .outside-link:hover {
+  transition-duration: 0.5s;
   border-bottom: 2px solid #8E949E;
 }
 
@@ -181,7 +201,7 @@ a.project-heading {
   margin: 0 0;
   font-size: 0.8rem;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   .project-heading .project-tag {
     flex-shrink: 1;
   }
